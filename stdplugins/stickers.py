@@ -55,7 +55,7 @@ async def _(event):
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
         packname = f"xᴀᴠɪᴛʜᴇʟᴇɢᴇɴᴅ ᴀɴɪᴍᴀᴛᴇᴅ"
-        packshortname = f"xᴀᴠɪᴛʜᴇʟᴇɢᴇɴᴅ_ᴀɴɪᴍᴀᴛᴇᴅ"  # format: Uni_Borg_userid
+        packshortname = f"xavithelegend_animated" 
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
@@ -96,7 +96,7 @@ async def _(event):
             await silently_send_message(bot_conv, "/publish")
             response = await silently_send_message(bot_conv, f"<{packname}>")
             await silently_send_message(bot_conv, "/skip")
-            response = await silently_send_message(bot_conv, packshortname)
+            response = await silently_send_message(bot_conv, {packshortname})
             if response.text == "Sorry, this short name is already taken.":
                 await event.edit(f"**FAILED**! @Stickers replied: {response.text}")
                 return
